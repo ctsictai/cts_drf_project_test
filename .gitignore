@@ -160,3 +160,4 @@ commerce-admin-api-dev-template*
 tags
 http/
 log/*.log.*
+db.sqlite3
