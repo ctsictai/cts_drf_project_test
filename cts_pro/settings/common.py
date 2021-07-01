@@ -24,7 +24,7 @@ ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = "django-insecure-#249tje0l-jpm^n5p)8qg39+b1)^zlb27dyfpipx&xe3b^7%!8"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -136,7 +136,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # DRF Default_settings
 REST_FRAMEWORK = {
-    "EXCEPTION_HANDLER": "cts_pro.common.exceptions.custom_exception_handler",
+    "EXCEPTION_HANDLER": "cts_pro.utils.exceptions.custom_exception_handler",
     # "DEFAULT_AUTHENTICATION_CLASSES": ("rest_framework.authentication.BasicAuthentication"),
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
     "PAGE_SIZE": 30,

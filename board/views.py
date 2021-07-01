@@ -3,7 +3,7 @@ from drf_yasg.utils import no_body  # noqa
 from drf_yasg.utils import swagger_auto_schema
 from rest_framework import status
 from rest_framework.decorators import action  # noqa
-from rest_framework.exceptions import ParseError  # noqa
+from rest_framework.exceptions import NotAuthenticated, ParseError  # noqa
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet, mixins
@@ -39,8 +39,6 @@ class BoardTest(mixins.ListModelMixin, mixins.CreateModelMixin, GenericViewSet):
         queryset = self.filter_queryset(self.get_queryset())
 
         page = self.paginate_queryset(queryset)
-        # raise ValueError("fsadfsf")
-
         if page is not None:
             serializer = self.get_serializer(page, many=True)
             return self.get_paginated_response(serializer.data)
