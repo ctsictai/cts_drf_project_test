@@ -83,13 +83,22 @@ WSGI_APPLICATION = "cts_pro.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "cts_pro_db",  # DB명
+        "USER": "root",  # 데이터베이스 계정
+        "PASSWORD": "password",  # 계정 비밀번호
+        "HOST": "localhost",  # 데이테베이스 주소(IP)
+        "PORT": "3306",  # 데이터베이스 포트(보통은 3306)
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
